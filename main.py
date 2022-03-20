@@ -9,7 +9,11 @@ class Auto:
         self.registro = registro
     
     def cantidadAsientos(self):
-        return len(self.asientos)
+        count=0
+        for i in self.asientos:
+            if type(i)==Asiento:
+                count+=1
+        return count
     
     def verificarIntegridad(self):
         regMotor= self.motor.registro
@@ -47,7 +51,21 @@ class Asiento:
         self.registro = registro
     
     def cambiarColor(self, color):
-        colores=["rojo","amarillo","negro","blanco","verde","amarillo"]
-        if(color is colores):
+        colores=["rojo","amarillo","negro","blanco","verde"]
+        if(color in colores):
             self.color = color
 
+
+
+a1 = Asiento("blanco", 5000, 435)
+a2 = Asiento("blanco", 5000, 435)
+
+a1.cambiarColor("naranja")
+a2.cambiarColor("verde")
+
+ok = False
+
+if(a1.color == "blanco" and a2.color == "verde"):
+    ok = True
+
+print(ok)
