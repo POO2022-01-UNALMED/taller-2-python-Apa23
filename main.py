@@ -19,13 +19,11 @@ class Auto:
         regMotor= self.motor.registro
         if(regMotor!=self.registro):
             return "Las piezas no son originales"
-        regAsientos=self.asientos[0]
+       
         for i in self.asientos:
-            if(regAsientos!=i.registro):
-                return "Las piezas no son originales"
-            regAsientos =i.registro
-        if(regAsientos!=self.registro):
-            return "Las piezas no son originales"
+            if type(i)==Asiento:
+                if(self.registro!=i.registro):
+                    return "Las piezas no son originales"
         return "Auto original"
 
         
