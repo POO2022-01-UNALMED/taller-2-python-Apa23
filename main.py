@@ -48,6 +48,6 @@ class Asiento:
     
     def cambiarColor(self, color):
         colores=["rojo","amarillo","negro","blanco","verde","amarillo"]
-        if(colores.contains(color)):
+        if(color is colores):
             self.color = color
 
